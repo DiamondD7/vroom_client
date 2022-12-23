@@ -1,0 +1,14 @@
+.main-navigation-items {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  background-color: #ffde59;
+  margin-top: 7px;
+}
+
+.main-navigation-items li button {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}

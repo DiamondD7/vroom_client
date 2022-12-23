@@ -1,0 +1,46 @@
+.content-container {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.tyres-poster {
+  margin: 10px 0 0 0;
+  width: 600px;
+}
+
+.car-posters-container {
+  display: flex;
+}
+
+.tyres-poster-two {
+  margin: 10px 0 0 145px;
+  width: 600px;
+}
+
+.insurance-flyer {
+  margin-top: 50px;
+  width: 600px;
+}
+
+.seek-professional-statement {
+  margin: 140px 0 0 70px;
+  width: 600px;
+}
+
+.statement-title {
+  font-size: 54px;
+  margin-bottom: 20px;
+}
+
+.statement-paragraph {
+  font-size: 19px;
+  line-height: 1.5;
+}
+
+.btn-quota {
+  margin-top: 40px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #ffde59;
+  font-size: 24px;
+}
