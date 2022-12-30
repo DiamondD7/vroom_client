@@ -4,9 +4,18 @@
 
 .reward-statement p {
   margin-top: 20px;
+  line-height: 1.5;
 }
 
 .reward-statement h2 {
   margin-top: 50px;
   font-size: 30px;
+}
+
+.lists{
+  margin: 20px 0 0 30px;
+}
+
+.lists li{
+  margin: 10px 0 0 0 ;
 }

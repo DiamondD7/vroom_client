@@ -31,6 +31,20 @@ const RewardsContent = () => {
           eligendi, reiciendis eveniet repellat dignissimos.
         </p>
         <h2>How to register and access our Vroooom rewards?</h2>
+        <ol className="lists">
+          <li>
+            Go to <a href="#">www.yoursite/rewards</a>
+          </li>
+          <li>
+            Enter your unique <strong>access code</strong>
+          </li>
+          <li>Change your access code to a password you can easily remember</li>
+          <li>
+            Start enjoying the benefits of Pit Stop Rewards - view all offers at{" "}
+            {""}
+            <a href="#">www.yoursite/</a>
+          </li>
+        </ol>
       </div>
     </div>
   );

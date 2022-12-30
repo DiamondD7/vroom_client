@@ -20,14 +20,20 @@ const Nav = () => {
             </button>
           </li>
           <li>
-            <button>Experience</button>
+            <button>
+              <a href="/experience">Experience</a>
+            </button>
           </li>
           <li>
-            <button>About Us</button>
+            <button>
+              <a href="/aboutus">About Us</a>
+            </button>
           </li>
 
           <li>
-            <button>Finance</button>
+            <button>
+              <a href="/finance">Finance</a>
+            </button>
           </li>
         </ul>
       </nav>
