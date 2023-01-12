@@ -1,59 +1,80 @@
-
-.feedback-header{
-    text-align: center;
-    font-size: 40px;
+.feedback-header {
+  text-align: center;
+  font-size: 40px;
 }
 
-.personal-contact-div{
-    margin-left: 115px;
+.personal-contact-div {
+  margin-left: 115px;
 }
 
-.personal-contact-div input{
-    width: 500px;
+.personal-contact-div input {
+  width: 500px;
 }
 
-.selection{
-    width: 500px;
+.selection {
+  width: 500px;
 }
 
-.textarea-div{
-    display: flex;
-    justify-content: space-evenly;
-    text-align: center;
+.textarea-div {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
 }
 
-.textarea-1{
-    min-width: 500px;
-    max-width: 500px;
+.textarea-1 {
+  min-width: 500px;
+  max-width: 500px;
 
-    min-height: 300px;
-    max-height: 300px;
+  min-height: 300px;
+  max-height: 300px;
 }
 
-.textarea-2{
-    min-width: 500px;
-    max-width: 500px;
+.textarea-2 {
+  min-width: 500px;
+  max-width: 500px;
 
-    min-height: 300px;
-    max-height: 300px;
+  min-height: 300px;
+  max-height: 300px;
 }
 
-.btn-div{
-    display: flex;
-    justify-content: center;
+.btn-div {
+  display: flex;
+  justify-content: center;
 
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
-.btn-sub{
-    padding: 10px;
-    background-color: black;
-    color: #ffde59;
+.btn-sub {
+  padding: 10px;
+  background-color: black;
+  color: #ffde59;
 
-    font-size: 19px;
-    cursor: pointer;
+  font-size: 19px;
+  cursor: pointer;
 }
 
-.btn-sub:hover{
-    background-color: #202020;
+.btn-sub:hover {
+  background-color: #202020;
+}
+
+.popup-icon-div {
+  position: absolute;
+  top: 27%;
+  left: 76%;
+
+  width: 200px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 5px;
+
+  border-radius: 20px;
+}
+
+.icon-popup {
+  stroke: limegreen;
+  width: 50px;
+  margin-right: 5px;
 }

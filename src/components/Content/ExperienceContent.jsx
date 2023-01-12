@@ -12,7 +12,10 @@ const ExperienceContent = () => {
   const [like, setLike] = useState("");
   const [dislike, setDislike] = useState("");
 
-  const addFeedback = () => {
+  const [feedbackSuccess, setFeedbackSuccess] = useState(false); //state for popups
+
+  const addFeedback = (e) => {
+    e.preventDefault();
     fetch(API_Feedback_URI, {
       method: "POST",
       headers: {
@@ -32,10 +35,36 @@ const ExperienceContent = () => {
       .then((res) => res.json())
       .then(() => {
         console.log("Added feedback");
+        setFeedbackSuccess(true); //setting the state to true when the user submit their feedback successfully.
+        setTimeout(() => {
+          setFeedbackSuccess(false); //setting the state to false after 2 seconds.
+          window.location.reload();
+        }, 1000); //2000 because i want the popup to disappear after 2 secs.
       });
   };
+
   return (
     <div>
+      {feedbackSuccess && (
+        <div className="popup-icon-div">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="icon-popup"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M4.5 12.75l6 6 9-13.5"
+            />
+          </svg>
+          <p>Feedback Submitted</p>
+        </div>
+      )}
+
       <form onSubmit={addFeedback}>
         <h1 className="feedback-header">Feedback</h1>
         <div className="personal-contact-div">
