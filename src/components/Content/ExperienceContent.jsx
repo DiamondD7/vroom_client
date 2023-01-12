@@ -15,6 +15,7 @@ const ExperienceContent = () => {
   const [feedbackSuccess, setFeedbackSuccess] = useState(false); //state for popups
 
   const addFeedback = (e) => {
+    //function that adds all the input values to the api
     e.preventDefault();
     fetch(API_Feedback_URI, {
       method: "POST",
