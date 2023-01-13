@@ -2,7 +2,8 @@ import React from "react";
 import logo from "../images/vroomlogo.png";
 import SalePoster from "../images/vroomsale.png";
 import SalePosterTwo from "../images/vroomflyer2.png";
-import SalePosterThree from "../images/vroomflyer3.png";
+import SalePosterFour from "../images/vroomrepairbody.png";
+import DeliveryMan from "../images/delivery.png";
 import Nav from "./Navigation/Nav";
 import MainContent from "./Content/MainContent";
 const Home = () => {
@@ -27,7 +28,13 @@ const Home = () => {
         <div className="right-poster">
           <img
             className="sale-poster-three"
-            src={SalePosterThree}
+            src={DeliveryMan}
+            alt="cardetailing"
+          />
+
+          <img
+            className="sale-poster-four"
+            src={SalePosterFour}
             alt="cardetailing"
           />
         </div>
