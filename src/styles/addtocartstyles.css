@@ -1,5 +1,64 @@
 .popup-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 700px;
   height: 800px;
-  background-color: red;
+  background-color: white;
+  z-index: 3;
+
+  overflow: auto;
+}
+
+.addtocart-subcontainer {
+  margin: 20px 0 0 20px;
+}
+
+.popup-container p {
+  font-size: 20px;
+}
+
+.addtocart-close-button {
+  position: absolute;
+  left: 27%;
+  top: 8.5%;
+
+  font-size: 21px;
+  padding: 5px;
+  z-index: 3;
+  cursor: pointer;
+
+  background-color: transparent;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.addtocart-img {
+  width: 190px;
+}
+
+.container-flex {
+  display: flex;
+  align-items: center;
+}
+
+.container-flex button {
+  margin: 0 10px 0 10px;
+  font-size: 24px;
+  padding: 5px;
+
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }

@@ -10,6 +10,7 @@ const ShopContent = () => {
   const [cartItems, setCartItems] = useState([]);
   const [cartCounter, setCartCounter] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalClose, setIsModalClose] = useState(false);
 
   useEffect(() => {
     fetch(API_Product_URI)
@@ -24,26 +25,39 @@ const ShopContent = () => {
       .catch((err) => console.log("Error is " + err));
   }, []);
 
+  useEffect(() => {
+    //this is for when the modal is open; the body's overflow will be hidden to prevent scrolling
+    const bod = document.getElementById("--body");
+    if (isModalOpen === true) {
+      bod.style.overflow = "hidden";
+    } else {
+      bod.style.overflow = "auto";
+    }
+  }, [isModalOpen]); //the value which changes to true or false will run this useEffect
+
   const addToCart = (i) => {
     setCartCounter((prevCartCounter) => prevCartCounter + 1);
     setCartItems([...cartItems, i]);
   };
 
-  const openCart = () => {
-    setIsModalOpen(true);
+  const openCart = (i) => {
+    setIsModalOpen(i); //change to true when true modal opens up
   };
   return (
     <div>
-      {isModalOpen && (
+      {isModalOpen === true ? (
         <div className="addtocart-modal">
-          <Addtocart picked={cartItems} />
-        </div>
+          <Addtocart picked={cartItems} isClose={openCart} />
+        </div> // unused className
+      ) : (
+        ""
       )}
+
       <div>
         <div className="cartCounter">
           <p>{cartCounter}</p>
         </div>
-        <button className="btn-icon" onClick={openCart}>
+        <button className="btn-icon" onClick={() => openCart(true)}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
