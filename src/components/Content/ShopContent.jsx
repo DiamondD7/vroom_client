@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import DummyData from "../../images/vroomflyer6.png";
 import { API_Product_URI } from "../../assets/Api";
 
 import "../../styles/shopstyles.css";
@@ -10,7 +9,6 @@ const ShopContent = () => {
   const [cartItems, setCartItems] = useState([]);
   const [cartCounter, setCartCounter] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isModalClose, setIsModalClose] = useState(false);
 
   useEffect(() => {
     fetch(API_Product_URI)
@@ -47,7 +45,11 @@ const ShopContent = () => {
     <div>
       {isModalOpen === true ? (
         <div className="addtocart-modal">
-          <Addtocart picked={cartItems} isClose={openCart} />
+          <Addtocart
+            picked={cartItems}
+            isClose={openCart}
+            count={cartItems.Quantity}
+          />
         </div> // unused className
       ) : (
         ""
@@ -84,6 +86,7 @@ const ShopContent = () => {
               <p className="product-title">{i.ProductName}</p>
               <p className="product-price">${i.ProductPrice}</p>
               <p className="product-description">{i.Description}</p>
+              <p>{i.Quantity}</p>
             </div>
             <div className="product-buttons">
               <button

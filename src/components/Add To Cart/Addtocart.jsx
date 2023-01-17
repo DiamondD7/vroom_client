@@ -1,48 +1,32 @@
 import React, { useState } from "react";
 
 import "../../styles/addtocartstyles.css";
+import ItemsInCart from "./ItemsInCart";
 const Addtocart = (props) => {
-  const [isModalNotClose, setIsModalNotClose] = useState(true);
-  const [counter, setCounter] = useState(0);
+  const [total, setTotal] = useState(0);
   const btnClose = (e) => {
     e.preventDefault();
-    setIsModalNotClose(false);
     props.isClose(false);
   };
 
-  const btnadd = () => {
-    setCounter((prevCounter) => prevCounter + 1);
-    // setCounter(props.picked.Quantity + 1);
+  const getItemDetails = (price, count) => {
+    console.log("pricetotal and count", price, count);
+    // let total = price * count;
+    setTotal((prevTotal) => prevTotal + price);
   };
 
-  const btnminus = () => {
-    if (props.picked.Quantity > 0) {
-      setCounter((prevCounter) => prevCounter - 1);
-      // setCounter(props.picked.Quantity - 1);
-    }
-  };
+  console.log("total", total);
+
   return (
     <div>
       <div className="overlay"></div>
       <div className="popup-container">
         {props.picked.map((items) => (
-          <div className="addtocart-subcontainer" key={items.id}>
-            <div className="container-flex">
-              <img
-                className="addtocart-img"
-                src={items.ProductImage}
-                alt="addtocartimage"
-              />
-              <div className="container-flex horizontalCenter">
-                <button onClick={btnminus}>-</button>
-                <p>{counter}</p>
-                <button onClick={btnadd}>+</button>
-              </div>
-            </div>
-            <p>{items.ProductName}</p>
-            <p>${items.ProductPrice}</p>
+          <div className="addtocart-subcontainer" key={items.Id}>
+            <ItemsInCart it={items} detailsFunc={getItemDetails} />
           </div>
         ))}
+        <p>Total: {total}</p>
       </div>
       <button className="addtocart-close-button" onClick={btnClose}>
         close
