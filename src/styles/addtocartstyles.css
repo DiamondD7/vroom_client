@@ -19,6 +19,11 @@
   font-size: 20px;
 }
 
+.counter-p {
+  position: absolute;
+  left: 250px;
+}
+
 .addtocart-close-button {
   position: absolute;
   left: 27%;
@@ -53,7 +58,7 @@
   align-items: center;
 }
 
-.container-flex button {
+/* .container-flex button {
   margin: 0 10px 0 10px;
   font-size: 24px;
   padding: 5px;
@@ -61,4 +66,41 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
+} */
+
+.btnminus {
+  margin: 0 10px 0 10px;
+  font-size: 24px;
+  padding: 5px;
+
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btnadd {
+  margin: 0 10px 0 15px;
+  font-size: 24px;
+  padding: 5px;
+
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btndel {
+  font-size: 17px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+
+  margin-left: 150px;
+  cursor: pointer;
+  background-color: red;
+  color: white;
+  border: 1px solid white;
+}
+
+.total-p {
+  margin-top: 100px;
 }

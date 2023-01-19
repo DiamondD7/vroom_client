@@ -86,7 +86,6 @@ const ShopContent = () => {
               <p className="product-title">{i.ProductName}</p>
               <p className="product-price">${i.ProductPrice}</p>
               <p className="product-description">{i.Description}</p>
-              <p>{i.Quantity}</p>
             </div>
             <div className="product-buttons">
               <button

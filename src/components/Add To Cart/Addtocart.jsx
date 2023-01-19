@@ -4,29 +4,48 @@ import "../../styles/addtocartstyles.css";
 import ItemsInCart from "./ItemsInCart";
 const Addtocart = (props) => {
   const [total, setTotal] = useState(0);
+  const [cartArray, setCartArray] = useState(props.picked);
+
   const btnClose = (e) => {
-    e.preventDefault();
-    props.isClose(false);
+    e.preventDefault(); //prevents the page to reload
+    props.isClose(false); //used as props for modal open and close functionality
+  };
+
+  const removeItem = (name, price, counter) => {
+    //TODO set state array when an item is remove
+    setCartArray((current) =>
+      current.filter((item) => item.ProductName !== name)
+    );
+    let result = price * counter; //calculates the value that will be substract to the prevTotal
+    setTotal((prevTotal) => prevTotal - result);
   };
 
   const getItemDetails = (price, count) => {
+    //TODO get the item details and adds them up to the prevTotal
     console.log("pricetotal and count", price, count);
-    // let total = price * count;
     setTotal((prevTotal) => prevTotal + price);
   };
 
-  console.log("total", total);
+  const getItemsDetailsMinus = (price, count) => {
+    //TODO get the item details and substract them down to the prevTotal
+    setTotal((prevTotal) => prevTotal - price);
+  };
 
   return (
     <div>
       <div className="overlay"></div>
       <div className="popup-container">
-        {props.picked.map((items) => (
+        {cartArray.map((items) => (
           <div className="addtocart-subcontainer" key={items.Id}>
-            <ItemsInCart it={items} detailsFunc={getItemDetails} />
+            <ItemsInCart
+              it={items}
+              detailsFunc={getItemDetails}
+              detailsFuncMinus={getItemsDetailsMinus}
+              detailsFuncRemove={removeItem}
+            />
           </div>
         ))}
-        <p>Total: {total}</p>
+        <p className="total-p">Total: {total}</p>
       </div>
       <button className="addtocart-close-button" onClick={btnClose}>
         close
