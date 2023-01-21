@@ -12,7 +12,9 @@ const Nav = () => {
             </button>
           </li>
           <li>
-            <button>Services</button>
+            <button>
+              <a href="/services">Services</a>
+            </button>
           </li>
           <li>
             <button>

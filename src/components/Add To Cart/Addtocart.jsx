@@ -34,7 +34,15 @@ const Addtocart = (props) => {
   return (
     <div>
       <div className="overlay"></div>
+
       <div className="popup-container">
+        {cartArray.length === 0 ? (
+          <div className="noItems">
+            <p className="noItems-p">No Items in the cart</p>
+          </div>
+        ) : (
+          ""
+        )}
         {cartArray.map((items) => (
           <div className="addtocart-subcontainer" key={items.Id}>
             <ItemsInCart
@@ -45,7 +53,11 @@ const Addtocart = (props) => {
             />
           </div>
         ))}
-        <p className="total-p">Total: {total}</p>
+        {cartArray.length !== 0 ? (
+          <p className="total-p">Total: {total}</p>
+        ) : (
+          ""
+        )}
       </div>
       <button className="addtocart-close-button" onClick={btnClose}>
         close

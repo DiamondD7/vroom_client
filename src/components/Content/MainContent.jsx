@@ -1,6 +1,7 @@
 import React from "react";
 
 import "../../styles/contentstyles.css";
+import MainServices from "../Services/MainServices";
 import AboutUsContent from "./AboutUsContent";
 import AdvertiseContent from "./AdvertiseContent";
 import ExperienceContent from "./ExperienceContent";
@@ -27,6 +28,9 @@ const MainContent = () => {
       break;
     case "/finance":
       component = <FinanceContent />;
+      break;
+    case "/services":
+      component = <MainServices />;
       break;
     default:
       console.log("Error in switch statement");

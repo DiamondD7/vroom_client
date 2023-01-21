@@ -40,11 +40,26 @@ const ShopContent = () => {
 
   const openCart = (i) => {
     setIsModalOpen(i); //change to true when true modal opens up
+    const element = document.getElementById("container-section");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
   };
+
+  const buyNowClick = (i) => {
+    setIsModalOpen(true);
+    setCartItems([i]);
+
+    const element = document.getElementById("container-section");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div>
-      {isModalOpen === true ? (
-        <div className="addtocart-modal">
+      {/* {isModalOpen === true ? (
+        <div className="addtocart-modal" id="cart-section">
           <Addtocart
             picked={cartItems}
             isClose={openCart}
@@ -53,9 +68,10 @@ const ShopContent = () => {
         </div> // unused className
       ) : (
         ""
-      )}
+      )} */}
+      <div></div>
 
-      <div>
+      <div id="mainshop-section">
         <div className="cartCounter">
           <p>{cartCounter}</p>
         </div>
@@ -94,11 +110,29 @@ const ShopContent = () => {
               >
                 Add To Cart
               </button>
-              <button className="product-button-buy">Buy Now</button>
+              <button
+                className="product-button-buy"
+                onClick={() => buyNowClick(i)}
+                id="buyNow"
+              >
+                Buy Now
+              </button>
             </div>
           </div>
         ))}
       </div>
+
+      {isModalOpen === true ? (
+        <div className="addtocart-modal" id="cart-section">
+          <Addtocart
+            picked={cartItems}
+            isClose={openCart}
+            count={cartItems.Quantity}
+          />
+        </div> // unused className
+      ) : (
+        ""
+      )}
     </div>
   );
 };

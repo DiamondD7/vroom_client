@@ -9,7 +9,7 @@ import MainContent from "./Content/MainContent";
 const Home = () => {
   return (
     <div>
-      <div className="container">
+      <div className="container" id="container-section">
         <div className="left-poster">
           <img className="sale-poster" src={SalePoster} alt="saleposter" />
           <img
