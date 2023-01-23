@@ -4,6 +4,7 @@ import "../../styles/contentstyles.css";
 import MainServices from "../Services/MainServices";
 import AboutUsContent from "./AboutUsContent";
 import AdvertiseContent from "./AdvertiseContent";
+import AllFeedbacks from "./AllFeedbacks";
 import ExperienceContent from "./ExperienceContent";
 import FinanceContent from "./FinanceContent";
 import RewardsContent from "./RewardsContent";
@@ -31,6 +32,9 @@ const MainContent = () => {
       break;
     case "/services":
       component = <MainServices />;
+      break;
+    case "/allfeedbacks":
+      component = <AllFeedbacks />;
       break;
     default:
       console.log("Error in switch statement");

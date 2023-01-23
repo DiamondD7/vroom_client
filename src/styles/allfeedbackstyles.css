@@ -1,0 +1,33 @@
+.feedback-title {
+  font-size: 55px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.Main {
+  display: grid;
+  grid-template-columns: repeat(3, 450px);
+  gap: 20px;
+}
+
+.feedback-container {
+  border: 1px solid black;
+}
+
+.image-feedback {
+  width: 100px;
+}
+
+.image-icon {
+  stroke: #ffde59;
+}
+
+.cred {
+  list-style: none;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.testaments {
+  width: 300px;
+}

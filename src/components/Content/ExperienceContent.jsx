@@ -139,6 +139,9 @@ const ExperienceContent = () => {
 
         <div className="btn-div">
           <button className="btn-sub">Submit</button>
+          <a className="seeallfeedbacks" href="/allfeedbacks">
+            See all feedback from our customers
+          </a>
         </div>
       </form>
     </div>
