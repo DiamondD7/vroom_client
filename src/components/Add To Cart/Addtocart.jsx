@@ -5,6 +5,7 @@ import ItemsInCart from "./ItemsInCart";
 const Addtocart = (props) => {
   const [total, setTotal] = useState(0);
   const [cartArray, setCartArray] = useState(props.picked);
+  const [currentCounter, setCurrentCounter] = useState(props.cartCounter);
 
   const btnClose = (e) => {
     e.preventDefault(); //prevents the page to reload
@@ -17,7 +18,11 @@ const Addtocart = (props) => {
       current.filter((item) => item.ProductName !== name)
     );
     let result = price * counter; //calculates the value that will be substract to the prevTotal
+    let finalCounter = currentCounter - counter; //calculates the total when item is removed
+    props.updateCounter(finalCounter, cartArray); //setting it and updating the currentCounter
     setTotal((prevTotal) => prevTotal - result);
+
+    console.log("settt", cartArray);
   };
 
   const getItemDetails = (price, count) => {

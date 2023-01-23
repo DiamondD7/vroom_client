@@ -38,6 +38,10 @@ const ShopContent = () => {
     setCartItems([...cartItems, i]);
   };
 
+  const updateCounter = (i) => {
+    setCartCounter(i);
+  };
+
   const openCart = (i) => {
     setIsModalOpen(i); //change to true when true modal opens up
     const element = document.getElementById("container-section");
@@ -58,17 +62,6 @@ const ShopContent = () => {
 
   return (
     <div>
-      {/* {isModalOpen === true ? (
-        <div className="addtocart-modal" id="cart-section">
-          <Addtocart
-            picked={cartItems}
-            isClose={openCart}
-            count={cartItems.Quantity}
-          />
-        </div> // unused className
-      ) : (
-        ""
-      )} */}
       <div></div>
 
       <div id="mainshop-section">
@@ -128,6 +121,8 @@ const ShopContent = () => {
             picked={cartItems}
             isClose={openCart}
             count={cartItems.Quantity}
+            cartCounter={cartCounter}
+            updateCounter={updateCounter}
           />
         </div> // unused className
       ) : (

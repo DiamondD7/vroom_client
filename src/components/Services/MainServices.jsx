@@ -6,9 +6,11 @@ import Breaks from "./Breaks/Breaks";
 import CarRentals from "./Car Rentals/CarRentals";
 import CheckUps from "./Check Ups/CheckUps";
 import EngineSwapService from "./Engine/EngineSwapService";
+import ExhaustService from "./Exhaust/ExhaustService";
 import MechOnDemand from "./MechanicOnDemand/MechOnDemand";
 import ServicesOpening from "./Opening/ServicesOpening";
 import RegoService from "./Rego/RegoService";
+import ShockService from "./Shock/ShockService";
 import TyresRims from "./Tyres/TyresRims";
 import WofServices from "./WOF/WofService";
 const MainServices = () => {
@@ -22,6 +24,8 @@ const MainServices = () => {
   const [checkUps, setCheckUps] = useState(false);
   const [battery, setBattery] = useState(false);
   const [breaks, setBreaks] = useState(false);
+  const [exhaust, setExhaust] = useState(false);
+  const [shock, setShock] = useState(false);
   return (
     <div>
       <div className="services-container">
@@ -40,6 +44,8 @@ const MainServices = () => {
                 setCheckUps(false);
                 setBattery(false);
                 setBreaks(false);
+                setExhaust(false);
+                setShock(false);
                 setWof(true);
               }}
             >
@@ -59,6 +65,8 @@ const MainServices = () => {
                 setCheckUps(false);
                 setBattery(false);
                 setBreaks(false);
+                setExhaust(false);
+                setShock(false);
                 setRego(true);
               }}
             >
@@ -78,6 +86,8 @@ const MainServices = () => {
                 setCheckUps(false);
                 setBattery(false);
                 setBreaks(false);
+                setExhaust(false);
+                setShock(false);
                 setEngineSwap(true);
               }}
             >
@@ -97,6 +107,8 @@ const MainServices = () => {
                 setCheckUps(false);
                 setBattery(false);
                 setBreaks(false);
+                setExhaust(false);
+                setShock(false);
                 setTyresRims(true);
               }}
             >
@@ -116,6 +128,8 @@ const MainServices = () => {
                 setCheckUps(false);
                 setBattery(false);
                 setBreaks(false);
+                setExhaust(false);
+                setShock(false);
                 setMechDemand(true);
               }}
             >
@@ -135,6 +149,8 @@ const MainServices = () => {
                 setCheckUps(false);
                 setBattery(false);
                 setBreaks(false);
+                setExhaust(false);
+                setShock(false);
                 setCarRentals(true);
               }}
             >
@@ -154,6 +170,8 @@ const MainServices = () => {
                 setCarRentals(false);
                 setBattery(false);
                 setBreaks(false);
+                setExhaust(false);
+                setShock(false);
                 setCheckUps(true);
               }}
             >
@@ -173,6 +191,8 @@ const MainServices = () => {
                 setCarRentals(false);
                 setCheckUps(false);
                 setBreaks(false);
+                setExhaust(false);
+                setShock(false);
                 setBattery(true);
               }}
             >
@@ -192,6 +212,8 @@ const MainServices = () => {
                 setCarRentals(false);
                 setCheckUps(false);
                 setBattery(false);
+                setExhaust(false);
+                setShock(false);
                 setBreaks(true);
               }}
             >
@@ -199,10 +221,46 @@ const MainServices = () => {
             </button>
           </li>
           <li>
-            <button>Car Exhaust Systems</button>
+            <button
+              className={exhaust === true ? "line-active" : ""}
+              onClick={() => {
+                setOpening(false);
+                setWof(false);
+                setRego(false);
+                setEngineSwap(false);
+                setTyresRims(false);
+                setMechDemand(false);
+                setCarRentals(false);
+                setCheckUps(false);
+                setBattery(false);
+                setBreaks(false);
+                setShock(false);
+                setExhaust(true);
+              }}
+            >
+              Car Exhaust Systems
+            </button>
           </li>
           <li>
-            <button>Shock Absorbers</button>
+            <button
+              className={shock === true ? "line-active" : ""}
+              onClick={() => {
+                setOpening(false);
+                setWof(false);
+                setRego(false);
+                setEngineSwap(false);
+                setTyresRims(false);
+                setMechDemand(false);
+                setCarRentals(false);
+                setCheckUps(false);
+                setBattery(false);
+                setBreaks(false);
+                setExhaust(false);
+                setShock(true);
+              }}
+            >
+              Shock Absorbers
+            </button>
           </li>
           <li>
             <button>Towbars</button>
@@ -219,6 +277,8 @@ const MainServices = () => {
           {checkUps && <CheckUps />}
           {battery && <Batteries />}
           {breaks && <Breaks />}
+          {exhaust && <ExhaustService />}
+          {shock && <ShockService />}
         </div>
       </div>
     </div>
