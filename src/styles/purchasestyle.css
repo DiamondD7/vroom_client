@@ -1,0 +1,86 @@
+.conffirmation-header {
+  text-align: center;
+  font-size: 45px;
+}
+
+.thankyou-header {
+  text-align: center;
+  font-size: 55px;
+}
+
+.products {
+  display: inline-block;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+.prod-title {
+  font-size: 20px;
+}
+
+.prod-image {
+  width: 250px;
+  height: 200px;
+}
+
+.prod-total {
+  font-size: 30px;
+  margin-top: 100px;
+  text-align: center;
+}
+
+.btn-confirmation {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.btn-confirmation button {
+  font-size: 30px;
+  padding: 5px 20px;
+  margin-bottom: 20px;
+}
+
+.cancel-confirmation {
+  background-color: transparent;
+  color: black;
+  border: none;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.confirmation-button {
+  background-color: black;
+  border: none;
+  color: #ffde59;
+  cursor: pointer;
+}
+
+.email-receipt {
+  font-size: 24px;
+  text-align: center;
+}
+
+.check-icon {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  stroke: darkgreen;
+  width: 100px;
+}
+
+.btn-back {
+  width: 50px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  position: absolute;
+  top: 25%;
+  left: 15%;
+}
+
+.back-icon {
+  stroke: black;
+}

@@ -7,6 +7,7 @@ const ItemsInCart = (props) => {
   const [isMinus, setIsMinus] = useState(false);
 
   const btnadd = () => {
+    //TODO adding the amount of items
     setCounter((prevCounter) => prevCounter + 1);
     setIsMinus(false);
   };
@@ -19,9 +20,8 @@ const ItemsInCart = (props) => {
   };
 
   const btnremove = () => {
-    console.log(counter);
     let productPrice = parseInt(props.it.ProductPrice);
-    props.detailsFuncRemove(props.it.ProductName, productPrice, counter);
+    props.detailsFuncRemove(props.ind, productPrice, counter);
   };
 
   useEffect(() => {
