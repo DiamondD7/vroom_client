@@ -33,7 +33,7 @@ const ExperienceContent = () => {
         NotLiked: dislike,
       }),
     })
-      .then((res) => res.json())
+      .then((res) => console.log(res))
       .then(() => {
         console.log("Added feedback");
         setFeedbackSuccess(true); //setting the state to true when the user submit their feedback successfully.
