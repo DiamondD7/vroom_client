@@ -39,7 +39,7 @@ const AllFeedbacks = () => {
                 </svg>
                 <div className="testaments">
                   <p>
-                    {items.Liked} {items.NotLiked}
+                    {items.Liked} but {items.NotLiked}
                   </p>
                 </div>
               </div>

@@ -63,7 +63,7 @@ const Addtocart = (props) => {
           ))}
           {cartArray.length !== 0 ? (
             <div>
-              <p className="total-p">Total: {total}</p>
+              <p className="total-p">Total: ${total}</p>
             </div>
           ) : (
             ""
