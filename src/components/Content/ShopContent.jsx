@@ -7,6 +7,7 @@ import Purchase from "../Add To Cart/Purchase";
 
 const ShopContent = () => {
   const [items, setItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [cartItems, setCartItems] = useState([]);
   const [cartCounter, setCartCounter] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -20,6 +21,7 @@ const ShopContent = () => {
       .then((data) => {
         //saved all data in the state Items
         setItems(data);
+        setIsLoading(false);
       })
       .catch((err) => console.log("Error is " + err));
   }, []);
@@ -105,39 +107,43 @@ const ShopContent = () => {
               </svg>
             </button>
           </div>
-          <div className="product-container">
-            {items.map((i, index) => (
-              <div key={i.Id}>
-                <div>
-                  <img
-                    className="product-image"
-                    src={i.ProductImage}
-                    alt="dummy"
-                  />
+          {isLoading === true ? (
+            <p className="loading">Loading...</p>
+          ) : (
+            <div className="product-container">
+              {items.map((i, index) => (
+                <div key={i.Id}>
+                  <div>
+                    <img
+                      className="product-image"
+                      src={i.ProductImage}
+                      alt="dummy"
+                    />
+                  </div>
+                  <div>
+                    <p className="product-title">{i.ProductName}</p>
+                    <p className="product-price">${i.ProductPrice}</p>
+                    <p className="product-description">{i.Description}</p>
+                  </div>
+                  <div className="product-buttons">
+                    <button
+                      className="product-button-cart"
+                      onClick={() => addToCart(i)}
+                    >
+                      Add To Cart
+                    </button>
+                    <button
+                      className="product-button-buy"
+                      onClick={() => buyNowClick(i)}
+                      id="buyNow"
+                    >
+                      Buy Now
+                    </button>
+                  </div>
                 </div>
-                <div>
-                  <p className="product-title">{i.ProductName}</p>
-                  <p className="product-price">${i.ProductPrice}</p>
-                  <p className="product-description">{i.Description}</p>
-                </div>
-                <div className="product-buttons">
-                  <button
-                    className="product-button-cart"
-                    onClick={() => addToCart(i)}
-                  >
-                    Add To Cart
-                  </button>
-                  <button
-                    className="product-button-buy"
-                    onClick={() => buyNowClick(i)}
-                    id="buyNow"
-                  >
-                    Buy Now
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
 
           {isModalOpen === true ? (
             <div className="addtocart-modal" id="cart-section">

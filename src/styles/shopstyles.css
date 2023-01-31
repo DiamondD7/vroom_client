@@ -74,6 +74,15 @@
   color: red;
 }
 
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-size: 20px;
+}
+
 /* .addtocart-modal {
   height: 300px;
   width: 300px;
